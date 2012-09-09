@@ -12,6 +12,13 @@ Opening stanza
     Sparse is better than dense.
     Readability counts.
     
+Also include:
+
+.. parsed-literal::
+
+    If the implementation is hard to explain, it's a bad idea.
+    If the implementation is easy to explain, it may be a good idea.
+    
  * http://www.codinghorror.com/blog/2008/07/spartan-programming.html
  * Minimalism isn't always the right choice, but it's rarely the wrong choice.
  * Don't do hard things. Do easy things.
