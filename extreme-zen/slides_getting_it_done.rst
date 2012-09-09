@@ -41,6 +41,8 @@ Tools to generate Python tests quickly.
 Getting it done
 ===============
 
+In Django I'm pretty well known for my skills with forms.
+
 .. code-block:: python
 
     # The part for creating research lab actions
