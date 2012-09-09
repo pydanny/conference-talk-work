@@ -7,6 +7,10 @@ Controversy II
     In the face of ambiguity, refuse the temptation to guess.
     There should be one-- and preferably only one --obvious way to do it.
     Although that way may not be obvious at first unless you're Dutch.
+
+.. parsed-literal::
+
+    You try to shoot yourself in the foot, only to realize there’s no need, since Guido thoughtfully shot you in the foot years ago.
     
 Decorators make code looks pretty, but writing them maybe isn't zenful.
 ===========================================================================

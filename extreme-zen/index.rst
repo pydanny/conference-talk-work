@@ -15,6 +15,7 @@ Contents:
    slides_controversy
    slides_exceptions
    slides_controversy_ii
+   slides_getting_it_done
 
 Indices and tables
 ==================

@@ -45,6 +45,7 @@ This might be better:
                 message=message
             )
             logging.error(log_message)
+            logging.exception() # This captures the whole traceback!!!
         
     for package in Package.objects.all():
         try:
