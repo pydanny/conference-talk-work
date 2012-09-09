@@ -14,6 +14,7 @@ Contents:
    slides_opening_stanza
    slides_controversy
    slides_exceptions
+   slides_controversy_ii
 
 Indices and tables
 ==================
