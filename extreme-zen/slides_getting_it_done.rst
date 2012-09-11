@@ -41,35 +41,89 @@ Tools to generate Python tests quickly.
 Getting it done
 ===============
 
-In Django I'm pretty well known for my skills with forms.
+For any reasonable large set of code, if you import * your will likely be cementing it into the module, unable to be removed. This is because it is difficult to determine what items used in the code are coming from 'module', making it east to get to the point where you think you don't use the import any more but its extremely difficult to be sure.
 
 .. code-block:: python
 
-    # The part for creating research lab actions
-    # Lets us save a second form called 'Verb' to a JSON field within the Action 
+    import re
+    import os
+    from twisted.internet import protocol, reactor
+    from django import forms
 
-    def form_valid(self, form):
-        self.protocol = self.get_protocol()  # get the research protocol from the URL slug
-        form.instance.step = self.get_step()  # get the protocol step from the URL slug
-        verb_form_base = self.get_verb_form(self.request.POST.get("verb_slug", None)) # get the vern
-        verb_form = verb_form_base(self.request.POST) # instantiate the verb
-        if verb_form.is_valid():
-            form.instance.verb_attributes = verb_form.cleaned_data # save the data
-        return super(ActionCreateView, self).form_valid(form)
+.. code-block:: python
+
+    from re import *
+    from os import *
+    from twisted import *
+    from django.forms import *
+    
+.. code-block:: python
+
+    def compare(mod1, mod2):
+        title = '\nComparing {0}, {1}:'.format(
+                mod1.__name__,
+                mod2.__name__
+                )
+        print(title)
+        for x in dir(mod1):
+            for y in dir(mod2):
+                if x == y and not x.startswith('_'):
+                    print("* " + x)
+                    
+.. code-block:: python
+
+    >>> import string
+    >>> import re
+    >>> import os
+    
+    >>> compare(os, re)
+    Comparing os, re:
+    * sys    
+    * error
+
+    >>> re.sys == os.sys
+    True
+    
+    >>> re.error == os.error
+    False
+
+    >>> compare(re, string)
+    * splint
+    
+                    
+.. code-block:: python
+
+    def compare_builtins(mod1):
+        print("\nComparing {0} to builtins:".format(mod1.__name__))
+        for x in dir(mod1):
+            for y in dir(globals()['__builtins__']):
+                if x == y and not x.startswith('_'):
+                    print("* GLOBAL: {0}".format(x))
+
+.. code-block:: python
+
+    >>> compare_builtins(re)
+    Comparing re to builtins:
+    * GLOBAL: compile    
+    >>> compare_builtins(os)
+    Comparing os to builtins:
+    * GLOBAL: open
+    
+.. parsed-literal::
+
+    Help on built-in function open in module posix:
+
+    open(...)
+        open(filename, flag [, mode=0777]) -> fd
+    
+        Open a file (for low level IO).
         
-# Pretty straightforward. But it's ravioli or pirogies code.
-        
-.. code-block:: 
+.. parsed-literal::
 
-    class ActionCreateView(LoginRequiredMixin, # django-braces
-                            ActionBaseView, # inherits from AuthorizedForProtocolMixin
-                            AuthorizedforProtocolEditMixin, # Checks rights on edit views
-                            VerbBaseView, # Gets one of 200+ verb forms
-                            CreateView): # django.views.generic.BaseView
+    Help on built-in function open in module __builtin__:
 
-Several hundred lines of code.
-
-* Could have done it in functional views more quickly.
-* Functional view is probably easier to test
-* *But* ``AuthorizedforProtocolEditMixin`` came after everything else.
-
+    open(...)
+        open(name[, mode[, buffering]]) -> file object
+    
+        Open a file using the file() type, returns a file object.  This is the
+        preferred way to open a file.  See file.__doc__ for further information.

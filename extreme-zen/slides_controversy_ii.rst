@@ -12,6 +12,8 @@ Controversy II
 
     You try to shoot yourself in the foot, only to realize there’s no need, since Guido thoughtfully shot you in the foot years ago.
     
+    -- Nick Mathewson, comp.lang.python
+    
 Decorators make code looks pretty, but writing them maybe isn't zenful.
 ===========================================================================
 
@@ -48,6 +50,10 @@ Decorating a function:
                 return function(*args, **kwargs) * multiple
             return wrapper
         return decorator
+        
+    @multiplier(3)
+    def allcaps(string):
+        return string.upper()
 
 
 Decorating with arguments:

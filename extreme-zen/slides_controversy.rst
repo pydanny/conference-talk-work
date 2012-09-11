@@ -12,6 +12,7 @@ Django
 
 A few areas that have made Django a pain point for some people:
 
+* MVC
 * How Django handles configuration and installation
 * Django and WSGI (solved)
 * Class based views
@@ -59,7 +60,7 @@ Web2py commonly uses implicit over explicit behavior. For example, in this modul
 
     #snip more content
 
-Web2py grossly violatesthe Zen of Python statement `Special cases aren't special enough to break the rules.` Yet the success of Web2py, especially in terms of it's ability to be taught quickly to beginners arguably proves that ` practicality beats purity.` 
+Web2py grossly violates the Zen of Python statement `Special cases aren't special enough to break the rules.` Yet the success of Web2py, especially in terms of it's ability to be taught quickly to beginners arguably proves that ` practicality beats purity.` 
 
 On a side note, as someone who has worked very hard on numerous occasions to get the right Python and Django components installed on student machines, I can say that I'm rather jealous of how easily Web2py makes it for instructors and students to get things running fast.
 
